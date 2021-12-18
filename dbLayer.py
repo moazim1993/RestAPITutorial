@@ -10,7 +10,11 @@ Run as the db layer first in a seperate terminal with python
 from app import db
 from app import Drinks
 
-db.create_all()
-drink = Drink(name='Coca-cola', description="Refreshing, crisp, sweet cola")
-db.session.add(drink)
-drink2 = Drink(name='Coca-cola', description="Refreshing, crisp, sweet cola")
+
+if __name__ == "__main__":
+    db.create_all()
+    drink = Drinks(name='Mexican Mule', description="Taquila, ginger beer and a jalapeno topping")
+    db.session.add(drink)
+    drink2 = Drinks(name='Taquila Sunrise', description="Taquila, OJ and a grendine finish")
+    db.session.add(drink2)
+    db.session.commit()

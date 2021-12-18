@@ -4,7 +4,15 @@
 Python Rest API Crash course
 Link: https://www.youtube.com/watch?v=qbLc5a9jdXo&list=PLj_dto2iVEP6eWSYjbBzhFccqy4u2HO52&index=5&t=51s
 
-## Rest API
+# How to use
+    1) Open a terminal and run the activate.bat
+    2) Open the ip address provided
+    3) In a seperate terminal run the dbLayer.py python script
+    4) 
+    
+    Notes: obviously you need to have a python env set up with the required modules
+
+## Rest API Notes
 	- API - Aplication Programming Interface
 	- Server and client
 		- Client process can request from the server process
@@ -28,4 +36,5 @@ Link: https://www.youtube.com/watch?v=qbLc5a9jdXo&list=PLj_dto2iVEP6eWSYjbBzhFcc
 		- DELETE - delete
 		- PUT - update data
 			- post not garunteed, put can be ran multiple time (idempotent) 
-	- 
+			
+
