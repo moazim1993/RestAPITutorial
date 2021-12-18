@@ -2,7 +2,7 @@
 """
 Created on Thu Dec 16 20:39:06 2021
 
-Run as the db layer first in a seperate terminal with python
+DB layer will add some data into the db
 
 @author: moazi
 """

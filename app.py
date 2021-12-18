@@ -1,19 +1,14 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Dec 16 19:40:22 2021
-Application layer
+Application layer - main logic for API
 
-To Run:
-    1) activate the bat file in terminal
-    2) Then run '$flask run'
-    3) ip should be prodived by flask, connect to it
-    4) ip/drinks should show the json 
 @author: moazi
 """
-
 from flask import Flask, request
-app = Flask(__name__)
 from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 db = SQLAlchemy(app)
@@ -52,15 +47,17 @@ def get_drink(id):
 
 @app.route('/drinks', methods=['POST'])
 def add_drink():
+    """
     content = request.json
     print(content)
     return {'test' : "True"}
     """
-    drink = Drinks(name=request.json['name'], description=request.json['description'])
+    drink = Drinks(name=request.json['name'],
+                   description=request.json['description'])
     db.session.add(drink)
     db.session.commit()
     return {'id' : drink.id}
-    """
+    
 
 
 @app.route('/drinks/<id>', methods=['DELETE'])
@@ -70,5 +67,6 @@ def delete_drink(id):
         return {"ERROR": "404 NOT FOUND"}
     db.session.delete(drink)
     db.session.commit()
+    return {"SUCCESS" : "Drink {} is deleted".format(id)}
 
 
